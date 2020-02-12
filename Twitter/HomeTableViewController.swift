@@ -30,6 +30,11 @@ class HomeTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.loadTweets()
+    }
+    
     @objc func loadTweets(){
         numberOfTweet = 20
         let myUrl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
